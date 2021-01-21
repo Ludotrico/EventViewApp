@@ -139,8 +139,8 @@ class EventCell: UITableViewCell {
         HostVStack.isLayoutMarginsRelativeArrangement = true
         
         HostVStack.addArrangedSubview(titleLbl)
-        titleLbl.widthAnchor.constraint(lessThanOrEqualToConstant: 1000).isActive = true
-        titleLbl.heightAnchor.constraint(lessThanOrEqualToConstant: 1000).isActive = true
+        titleLbl.widthAnchor.constraint(lessThanOrEqualToConstant: 5000).isActive = true
+        titleLbl.heightAnchor.constraint(lessThanOrEqualToConstant: 5000).isActive = true
         titleLbl.text = event.name
         
         HostVStack.addArrangedSubview(locationLbl)
