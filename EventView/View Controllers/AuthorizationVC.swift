@@ -92,7 +92,7 @@ class AuthorizationVC: UIViewController {
     lazy var switchContextBtn: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSAttributedString.Key.font: mediumFont, NSAttributedString.Key.foregroundColor: UIColor.gray])
+        let attributedTitle = NSMutableAttributedString(string: "Don't have an account?       ", attributes: [NSAttributedString.Key.font: smallFont, NSAttributedString.Key.foregroundColor: UIColor.gray])
         attributedTitle.append(NSAttributedString(string: "Sign up", attributes: [NSAttributedString.Key.font: mediumFontBold, NSAttributedString.Key.foregroundColor: UIColor.black,]))
         button.setAttributedTitle(attributedTitle, for: .normal)
         button.addTarget(self, action: #selector(switchContextBtnTapped), for: .touchUpInside)
@@ -265,14 +265,14 @@ class AuthorizationVC: UIViewController {
             submitBtn.setTitle("Login", for: .normal)
             
             
-            let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSAttributedString.Key.font: mediumFont, NSAttributedString.Key.foregroundColor: UIColor.gray])
+            let attributedTitle = NSMutableAttributedString(string: "Don't have an account?       ", attributes: [NSAttributedString.Key.font: smallFont, NSAttributedString.Key.foregroundColor: UIColor.gray])
             attributedTitle.append(NSAttributedString(string: "Sign up", attributes: [NSAttributedString.Key.font: mediumFontBold, NSAttributedString.Key.foregroundColor: UIColor.black,]))
             switchContextBtn.setAttributedTitle(attributedTitle, for: .normal)
         } else {
             submitBtn.setTitle("Register", for: .normal)
             
             
-            let attributedTitle = NSMutableAttributedString(string: "Already have an account?  ", attributes: [NSAttributedString.Key.font: mediumFont, NSAttributedString.Key.foregroundColor: UIColor.gray])
+            let attributedTitle = NSMutableAttributedString(string: "Already have an account?       ", attributes: [NSAttributedString.Key.font: smallFont, NSAttributedString.Key.foregroundColor: UIColor.gray])
             attributedTitle.append(NSAttributedString(string: "Log in", attributes: [NSAttributedString.Key.font: mediumFontBold, NSAttributedString.Key.foregroundColor: UIColor.black,]))
             switchContextBtn.setAttributedTitle(attributedTitle, for: .normal)
         }
