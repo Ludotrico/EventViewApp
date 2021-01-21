@@ -30,6 +30,10 @@ class ContainerVC: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        logOutBtn.isHidden = false
+    }
     
     
     //MARK: Variables
@@ -54,6 +58,18 @@ class ContainerVC: UIViewController {
         spinner.isHidden = false
         spinner.alpha = 1
         return spinner
+    }()
+    
+    let logOutBtn: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("Log out", for: .normal)
+        btn.titleLabel?.textColor = .systemRed
+        btn.titleLabel?.font = smallFontBold
+        btn.tintColor = .systemRed
+        btn.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        btn.heightAnchor.constraint(equalToConstant: 30).isActive = true
+      
+        return btn
     }()
     
     
@@ -112,13 +128,7 @@ class ContainerVC: UIViewController {
     func configureNavigationBar() {
         title = "Events"
         
-        let logOutBtn = UIButton(type: .system)
-        logOutBtn.setTitle("Log out", for: .normal)
-        logOutBtn.titleLabel?.textColor = .systemRed
-        logOutBtn.titleLabel?.font = smallFontBold
-        logOutBtn.tintColor = .systemRed
-        logOutBtn.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        logOutBtn.heightAnchor.constraint(equalToConstant: 30).isActive = true
+
         logOutBtn.addTarget(self, action: #selector(logOutBtnTapped), for: .touchUpInside)
         
         navigationController!.navigationBar.addSubview(logOutBtn)
@@ -200,7 +210,8 @@ class ContainerVC: UIViewController {
 
         UserDefaults.standard.set(nil, forKey: "attendanceDictionary")
         
-        
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .bottom, animated: false)
+    
         authorizeUser()
     }
 
@@ -224,6 +235,8 @@ extension ContainerVC: UITableViewDelegate, UITableViewDataSource {
         eventVC.title = event.name
         eventVC.eventIndex = indexPath.row
         eventVC.setup(eventID: event.id)
+        
+        logOutBtn.isHidden = true
         navigationController?.pushViewController(eventVC, animated: true)
     }
     

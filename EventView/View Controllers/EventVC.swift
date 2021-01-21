@@ -14,6 +14,12 @@ class EventVC: UIViewController {
         
         eventVC = self
         
+       
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        containerVC.logOutBtn.isHidden = true
     }
     
     
