@@ -157,6 +157,8 @@ class AuthorizationVC: UIViewController {
         view.addSubview(switchContextBtn)
         switchContextBtn.anchor(top: nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 32, paddingBottom: 6, paddingRight: 32, width: 0, height: 25)
         
+        self.isRegistration.toggle()
+        switchContextBtnTapped()
         
     }
     
@@ -269,11 +271,11 @@ class AuthorizationVC: UIViewController {
             attributedTitle.append(NSAttributedString(string: "Sign up", attributes: [NSAttributedString.Key.font: mediumFontBold, NSAttributedString.Key.foregroundColor: UIColor.black,]))
             switchContextBtn.setAttributedTitle(attributedTitle, for: .normal)
         } else {
-            submitBtn.setTitle("Register", for: .normal)
+            submitBtn.setTitle("Sign up", for: .normal)
             
             
             let attributedTitle = NSMutableAttributedString(string: "Already have an account?       ", attributes: [NSAttributedString.Key.font: smallFont, NSAttributedString.Key.foregroundColor: UIColor.gray])
-            attributedTitle.append(NSAttributedString(string: "Log in", attributes: [NSAttributedString.Key.font: mediumFontBold, NSAttributedString.Key.foregroundColor: UIColor.black,]))
+            attributedTitle.append(NSAttributedString(string: "Login", attributes: [NSAttributedString.Key.font: mediumFontBold, NSAttributedString.Key.foregroundColor: UIColor.black,]))
             switchContextBtn.setAttributedTitle(attributedTitle, for: .normal)
         }
         
