@@ -175,7 +175,8 @@ class EventVC: UIViewController {
                     
                     //Update containerVC
                     containerVC.events[self.eventIndex].attending += 1
-                    containerVC.tableView.reloadRows(at: [IndexPath(row: self.eventIndex, section: 0)], with: .none)
+                    containerVC.tableView.reloadData()
+//                    containerVC.tableView.reloadRows(at: [IndexPath(row: self.eventIndex, section: 0)], with: .none)
 
                 }
             case .failure(let error):
